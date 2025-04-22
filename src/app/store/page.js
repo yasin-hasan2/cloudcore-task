@@ -1,15 +1,36 @@
+"use client";
+import { useEffect, useState } from "react";
 import ProductCard from "./components/ProductCard";
 
-async function getProducts() {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_URL}/api/all/product/get`
-  );
-  const data = await res.json();
-  return data.data.data; // Correct path to the array of products
-}
+export default function Store() {
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-export default async function Store() {
-  const products = await getProducts();
+  useEffect(() => {
+    async function fetchProducts() {
+      try {
+        const res = await fetch(
+          `${process.env.NEXT_PUBLIC_BASE_URL}/api/all/product/get`
+        );
+        const data = await res.json();
+        setProducts(data.data.data);
+      } catch (err) {
+        console.error("Failed to fetch products:", err);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    fetchProducts();
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-[#FDF3F9]">
+        <div className="w-12 h-12 border-4 border-pink-500 border-dashed rounded-full animate-spin"></div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen p-6 bg-[#FDF3F9] text-gray-900">
