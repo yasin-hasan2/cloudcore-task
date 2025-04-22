@@ -10,7 +10,7 @@ export default function ProductCard({ product }) {
       <img
         src={`https://admin.refabry.com/storage/product/${product.image}`}
         alt={product.name}
-        className="w-full h-96 object-cover"
+        className="w-full h-48 lg:h-96 object-cover"
       />
       <div className="p-4 flex flex-col justify-between flex-grow">
         <div>
