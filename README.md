@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+=================================
+"Note: I chose not to use Redux Toolkit due to time constraints, but I’ve structured the state management in a clean and scalable way using React Context and useState. I'm currently learning Redux Toolkit and plan to integrate it in future versions."
+=================================
 
-## Getting Started
+🧥 Refabry Product Details Page
+This is a dynamic and animated product detail page built with Next.js, Tailwind CSS, and Framer Motion. It fetches product data from the Refabry API and displays each product with a clean UI, custom colors matching the homepage, and smooth animations.
 
-First, run the development server:
+✨ Features
+✅ Fetches product details from live API
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+🎨 Beautiful and responsive UI using Tailwind CSS
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+🧩 Custom design and color scheme to match homepage style
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+🎞️ Entry animation with Framer Motion
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+🖼️ Displays product image, description, and price
 
-## Learn More
+⚡ Optimized with cache: "no-store" to always show the latest data
 
-To learn more about Next.js, take a look at the following resources:
+🎨 Design Notes
+🔔 Custom Color Scheme:
+The product detail page was styled using a custom-tailored color palette to visually align with the homepage design. Backgrounds, borders, and text were color-coordinated to ensure consistency across the site.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+🛠 Tech Stack
+Framework: Next.js (App Router)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Styling: Tailwind CSS (with custom theme)
 
-## Deploy on Vercel
+Animation: Framer Motion
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+API Endpoint:
+https://admin.refabry.com/api/all/product/get
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+💡 To Do / Future Improvements
+Add cart functionality
+
+Add image zoom or gallery
+
+Add reviews & ratings
+
+Improve SEO with metadata
+
+👨‍💻 Developed by
+Yasin — Frontend Developer
