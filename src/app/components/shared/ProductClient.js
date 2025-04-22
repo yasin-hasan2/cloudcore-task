@@ -1,10 +1,29 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 export default function ProductClient({ product }) {
-  console.log("ProductClient", product);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // simulate loading for smooth transition (optional)
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 500); // short artificial loading time
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-[#FDF3F9]">
+        <div className="w-12 h-12 border-4 border-pink-500 border-dashed rounded-full animate-spin"></div>
+      </div>
+    );
+  }
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
